@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mindful Moments</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🟦</span>
+      <span>Mindful Moments</span>
+    </div>
+    <nav class="nav">
+      <a>Home</a>
+      <a>Journal</a>
+      <a>Insights</a>
+      <a>Community</a>
+    </nav>
+    <div class="user-row">
+      <button class="notif">🔔</button>
+      <img src="https://i.pravatar.cc/40" alt="avatar" class="avatar">
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="entry-area">
+      <h1>How are you feeling today, Sarah?</h1>
+      <p class="sub">Choose an emoji that best represents your mood.</p>
+
+      <div class="mood-row" id="moodRow">
+        <button data-mood="1" class="mood">😄</button>
+        <button data-mood="2" class="mood">🙂</button>
+        <button data-mood="3" class="mood">😐</button>
+        <button data-mood="4" class="mood">😔</button>
+        <button data-mood="5" class="mood">😩</button>
+      </div>
+
+      <textarea id="entryText" placeholder="Write about your day..." rows="6"></textarea>
+
+      <div class="row-between">
+        <div></div>
+        <button id="saveBtn" class="save-btn">Save Entry</button>
+      </div>
+    </section>
+
+    <section class="past-entries">
+      <h2>Past Entries</h2>
+      <div id="entriesList" class="entries-list"></div>
+    </section>
+
+    <section class="trends">
+      <h2>Mood Trends</h2>
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <small>Mood Trend</small>
+            <h3 id="avgMood">Average: —</h3>
+            <small id="trendChange">Last 7 Days —</small>
+          </div>
+        </div>
+        <canvas id="moodChart" height="120"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
